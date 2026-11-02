@@ -22,9 +22,9 @@ justify-content:space-between;height:52px;padding:0 24px}
 .top nav a:hover{color:var(--ink)}
 .top nav a.on{color:var(--ink);font-weight:600}
 .page{max-width:828px;margin:0 auto;padding:0 24px 140px}
-.toc{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:20;max-height:80vh;overflow:hidden auto;padding:12px 14px;border-radius:10px;font-size:14px;line-height:1.45;transition:background .2s,box-shadow .2s}
+.toc{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:20;max-height:90vh;overflow:hidden auto;padding:12px 14px;border-radius:10px;font-size:14px;line-height:1.45;transition:background .2s,box-shadow .2s}
 .toc .lbl{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin:0;max-height:0;opacity:0;overflow:hidden;transition:opacity .2s,max-height .2s,margin .2s}
-.toc a{display:flex;align-items:baseline;gap:10px;color:#3d444d;text-decoration:none;padding:4px 0}
+.toc a{display:flex;align-items:baseline;gap:10px;color:#3d444d;text-decoration:none;padding:3px 0}
 .toc a::before{content:"";flex:none;align-self:center;width:14px;height:2px;border-radius:1px;background:#d3d7dc;transition:width .2s,background .2s}
 .toc a.on::before{width:22px;background:var(--ink)}
 .toc a span{display:block;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;transition:opacity .2s,max-width .25s}
@@ -33,6 +33,17 @@ justify-content:space-between;height:52px;padding:0 24px}
 .toc:hover a span{max-width:clamp(170px,calc(50vw - 500px),250px);opacity:1;white-space:normal}
 .toc a:hover{color:var(--ink)}
 .toc a.on span{color:var(--ink);font-weight:600}
+.toc a.par::before{width:18px;background:var(--ink2)}
+.toc a.par span{color:var(--ink)}
+.toc a.sub{font-size:13px;line-height:1.35;padding:2px 0;color:var(--ink3)}
+.toc a.sub::before{width:6px;margin-left:8px;background:#e3e6ea}
+.toc a.sub.on::before{width:10px;background:var(--ink2)}
+.toc a.sub.on span{font-weight:500}
+.toc:hover .subs{margin:1px 0 4px 24px;border-left:1px solid var(--rule)}
+.toc:hover a.sub{padding-left:12px}
+.toc:hover a.sub::before{display:none}
+.toc:hover a.sub.on{margin-left:-1px;padding-left:11px;border-left:2px solid var(--ink)}
+.toc:hover a.sub span{max-width:clamp(146px,calc(50vw - 524px),226px)}
 .body{min-width:0}
 .head{padding:56px 0 8px;margin-bottom:36px;border-bottom:1px solid var(--rule)}
 .head h1{font-size:34px;line-height:1.28;font-weight:600;margin:0 0 12px;text-wrap:balance}
@@ -97,6 +108,10 @@ html[data-theme=dark]{color-scheme:dark;--ink:#e6edf3;--ink2:#9da7b3;--ink3:#7d8
 html[data-theme=dark] body,html[data-theme=dark] .top{background:#0d1117}
 html[data-theme=dark] .toc a{color:#adb5bd}
 html[data-theme=dark] .toc a::before{background:#3d444d}
+html[data-theme=dark] .toc a.on::before,html[data-theme=dark] .toc a.par::before{background:var(--ink2)}
+html[data-theme=dark] .toc a.sub{color:var(--ink3)}
+html[data-theme=dark] .toc a.sub::before{background:#30363d}
+html[data-theme=dark] .toc a.sub.on::before{background:var(--ink2)}
 html[data-theme=dark] .toc:hover{background:rgba(22,27,34,.97);box-shadow:0 6px 28px rgba(0,0,0,.5)}
 html[data-theme=dark] .body a{text-decoration-color:rgba(230,237,243,.3)}
 html[data-theme=dark] .body a:hover{text-decoration-color:rgba(230,237,243,.7)}
